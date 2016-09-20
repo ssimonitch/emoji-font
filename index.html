@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Emoji Font</title>
+    <script type="text/javascript" src="emojiFont.js"></script>
+    <script type="text/javascript">
+      function generateEmojiStr() {
+        var str      = document.getElementById('textStr').value.trim();
+        var emojiStr = document.getElementById('emojiStr').value;
+        var blankStr = document.getElementById('blankStr').value;
+        
+        var emojiStr = emojiFont(str, blankStr, emojiStr);
+        
+        document.getElementById('output').value = emojiStr;
+      }
+    </script>
+    <style type="text/css">
+      textarea {
+        width : 200pt;
+        height: 75pt;
+      }
+    </style>
+  </head>
+  <body>
+     <h1>Emoji Font</h1>
+     <label for="emojiStr">Emoji:</label> <input id="emojiStr" name="emojiStr" type="text" value=":parrot:" /><br />
+     <label for="blankStr">Blank:</label> <input id="blankStr" name="blankStr" type="text" value=":blank:" /><br />
+     <br />
+     <label for="textStr">Text:</label><br />
+     <textarea id="textStr" name="textStr"></textarea><br />
+     <br />
+     <input type="button" value="Generate!" onclick="generateEmojiStr();" /><br />
+     <br />
+     <textarea id="output"></textarea><br />
+  </body>
+</html>
